@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人信息</title>
+    <link rel="shortcut icon" type="image/jpg" href="imgs/logo.jpg">
+    <!-- 导入样式文件 -->
+    <link rel="stylesheet" href="css/style1.css">
+    <!-- 导入jq框架文件 -->
+    <script src="js/jquery.min.js"></script>
+    <style>
+        #tit_nav{
+            width: 100%;
+            height: 100px;
+            border: solid 0px red;
+        }
+        #nav{
+            width: 100%;
+            height: 80px;
+            position: fixed;
+            border: solid 0px red;
+            top:0px;
+            left: 45px;
+            background-color:#555;
+            z-index: 9998;
+        }
+        #nav>.box{
+            overflow: hidden;
+            width: 960px;
+            margin: 0 auto;
+            border: solid 0px blue;
+            font-size: 20px;
+        }
+        #nav>.box>.list{
+            float: left;
+            padding: 30px 0px;
+        }
+        #nav>.box>.list>ul{
+            float: left;
+        }
+        #nav>.box>.list>ul>li{
+            float: left;
+            margin-right: 40px;
+        }
+        #nav>.box>#search-form{
+            float: left;
+            padding: 20px 0px;
+        }
+        #nav>.box>#search-form>.search-input-text{
+            width: 130px;
+            height: 25px;
+        }
+        #nav>.box>#search-form>.search-input-button{
+            width: 70px;
+            height: 35px;
+            background-color:#555;
+            border: none;
+            color: #E8F5EC;
+            outline: none;
+        }
+        #nav>.box>#search-form>.search-input-button:hover{
+            cursor: pointer;
+        }
+        .title>img{
+            position: fixed;
+            width: 80px;
+            height:80px;
+            border-radius: 80px;
+            margin-left: 5px;
+            z-index: 9999;
+        }
+        /* 个人信息样式   */
+        #personal{
+            width: 960px;
+            height: 370px;
+            border: solid 1px #cccccc;
+            margin: 0 auto;
+            background-color: white;
+        }
+        #personal>.title{
+            border: solid 0px blue;
+            margin: 10px 0 20px 10px;
+        }
+        #personal>.title>li{
+            list-style: none;
+            font-size: 25px;
+            font-weight: 700;
+        }
+        #personal>.title>li>.btn_tit{
+            width: 50px;
+            height: 30px;
+            margin-left: 770px;
+            border: none;
+            outline: none;
+            background-color: white;
+            color:cornflowerblue;
+        }
+        #personal>.title>li>.btn_tit:hover{
+            cursor: pointer;
+        }
+        #personal>.msg>ul{
+            margin: 5px 0 5px 10px;
+            font-size: 18px;
+        }
+        #personal>.msg>ul>div:nth-child(1){
+            padding: 5px 0 8px 5px;
+        }
+        #personal>.msg>ul>div:nth-child(2){
+            padding: 5px 0 8px 5px;
+        }
+        #personal>.msg>ul>div:nth-child(3){
+            padding: 5px 0 8px 5px;
+        }
+        #personal>.msg>ul>div:nth-child(4){
+            padding: 5px 0 8px 5px;
+        }
+        #personal>.msg>ul>div:nth-child(5){
+            padding: 5px 0 8px 5px;
+        }
+        #personal>.msg>ul>div:nth-child(6){
+            padding: 5px 0 20px 5px;
+        }
+        #personal>.msg>ul>div>li>input{
+            width: 880px;
+            height: 25px;
+            margin-left: 10px;
+            border: 0;
+            outline: none;
+        }
+        #personal>.msg>ul>div>textarea{
+            width: 880px;
+            height: 50px;
+            border: 0;
+            outline: none;
+        }
+        /*中间个人博客样式*/
+        #body1 {
+            width: 960px;
+            margin: 30px auto 0 auto;
+            border: solid 0px red;
+            overflow: hidden;
+
+        }
+        #body1>.body1_list{
+            width: 620px;
+            border: solid 0px blue;
+            float: left;
+            background-color: white;
+        }
+        #body1>.body1_list>.list1{
+            margin: 10px 10px;
+            width: 595px;
+            height: 145px;
+            border: solid 0px blue;
+
+        }
+        #body1>.body1_list>.list1>.con>.cleft{
+            width: 210px;
+            float: left;
+            margin-top: 5px ;
+        }
+        #body1>.body1_list>.list1>.con>.cright{
+            width: 370px;
+            float: left;
+            padding: 10px 0px 10px 15px;
+        }
+        #body1>.body1_list>.list1>.con>.cright>.pbottom{
+            margin-top:26px;
+            font-size: 11px;
+        }
+        #body1>.body1_list>.list1>.con>.cleft>img{
+            width: 100%;
+        }
+        /*个人页面中广告样式*/
+        #body1>.body1_ad{
+            width: 260px;
+            border: solid 0px olivedrab;
+            float: left;
+            margin-left: 40px;
+            background-color: #fff;
+        }
+        #body1>.body1_ad>.adtip>.line{
+            border-bottom: solid 2px #000;
+            width: 30px;
+        }
+        #body1>.body1_ad>.adtip>h3{
+            padding-left: 10px;
+            padding-top: 10px;
+        }
+        #body1>.body1_ad>.imglst>ul>li{
+            margin-top: 20px;
+            margin-left: 12px;
+            width: 260px;
+        }
+        #body1>.body1_ad>.imglst>ul>li>img{
+            width: 90%
+        }
+    </style>
+</head>
+<body>
+    <div id="tit_nav">
+        <div class="title">
+            <img src="imgs/logo.jpg" alt="">
+        </div>
+        <div id="nav">
+            <div class="box">
+                <div class="list">
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="https://www.baidu.com">个人信息</a></li>
+                        <li><a href="https://www.baidu.com">讨论区</a></li>
+                        <li><a href="https://www.baidu.com">留言</a></li>
+                        <li><a href="https://www.baidu.com">关于我</a></li>
+                        <li><a href="https://www.baidu.com">发表博客</a></li>
+                    </ul>
+                </div>
+                <div id="search-form">
+                    <input type="text" class="search-input-text" id="search-input" name="search-input" />
+                    <input type="submit" class="search-input-button" value="搜索"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="personal">
+        <div class="title"><li>个人信息<input type="submit" value="保存" class="btn_tit"></li></div>
+        <div class="msg">
+            <ul>
+                <div><li>昵称:<input type="text"></li></div>
+                <div><li>性别:<input type="text"></li></div>
+                <div><li>年龄:<input type="text"></li></div>
+                <div><li>生日:<input type="text"></li></div>
+                <div><li>班级:<input type="text"></li></div>
+                <div><li>简介:</li><textarea name="" id="" cols="30" rows="10"></textarea></div>
+            </ul>
+        </div>
+    </div>
+    <div id="body1">
+        <div class="body1_list">
+            <div class="list1">
+                <!-- 标题 -->
+                <div class="title">
+                    <h3>Python计算机程序设计语言</h3>
+                </div>
+                <!-- 内容 -->
+                <div class="con">
+                    <!-- 左侧图片 -->
+                    <div class="cleft">
+                        <img src="imgs/pic05.jpg" alt="">
+                    </div>
+                    <!-- 右侧图片说明 -->
+                    <div class="cright">
+                        <p class="ptop">
+                            Python是一种跨平台的计算机程序设计语言。是一种面向对象的动态类型语言，最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越来越多被用于独立的、大型项目的开发...
+                        </p>
+                        <p class="pbottom">
+                            王老五  2018-5-13  阅读 9999
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="list1">
+                <!-- 标题 -->
+                <div class="title">
+                    <h3>Python计算机程序设计语言</h3>
+                </div>
+                <!-- 内容 -->
+                <div class="con">
+                    <!-- 左侧图片 -->
+                    <div class="cleft">
+                        <img src="imgs/pic05.jpg" alt="">
+                    </div>
+                    <!-- 右侧图片说明 -->
+                    <div class="cright">
+                        <p class="ptop">
+                            Python是一种跨平台的计算机程序设计语言。是一种面向对象的动态类型语言，最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越来越多被用于独立的、大型项目的开发...
+                        </p>
+                        <p class="pbottom">
+                            王老五  2018-5-13  阅读 9999
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="list1">
+                <!-- 标题 -->
+                <div class="title">
+                    <h3>Python计算机程序设计语言</h3>
+                </div>
+                <!-- 内容 -->
+                <div class="con">
+                    <!-- 左侧图片 -->
+                    <div class="cleft">
+                        <img src="imgs/pic05.jpg" alt="">
+                    </div>
+                    <!-- 右侧图片说明 -->
+                    <div class="cright">
+                        <p class="ptop">
+                            Python是一种跨平台的计算机程序设计语言。是一种面向对象的动态类型语言，最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越来越多被用于独立的、大型项目的开发...
+                        </p>
+                        <p class="pbottom">
+                            王老五  2018-5-13  阅读 9999
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="list1">
+                <!-- 标题 -->
+                <div class="title">
+                    <h3>Python计算机程序设计语言</h3>
+                </div>
+                <!-- 内容 -->
+                <div class="con">
+                    <!-- 左侧图片 -->
+                    <div class="cleft">
+                        <img src="imgs/pic05.jpg" alt="">
+                    </div>
+                    <!-- 右侧图片说明 -->
+                    <div class="cright">
+                        <p class="ptop">
+                            Python是一种跨平台的计算机程序设计语言。是一种面向对象的动态类型语言，最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越来越多被用于独立的、大型项目的开发...
+                        </p>
+                        <p class="pbottom">
+                            王老五  2018-5-13  阅读 9999
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="list1">
+                <!-- 标题 -->
+                <div class="title">
+                    <h3>Python计算机程序设计语言</h3>
+                </div>
+                <!-- 内容 -->
+                <div class="con">
+                    <!-- 左侧图片 -->
+                    <div class="cleft">
+                        <img src="imgs/pic05.jpg" alt="">
+                    </div>
+                    <!-- 右侧图片说明 -->
+                    <div class="cright">
+                        <p class="ptop">
+                            Python是一种跨平台的计算机程序设计语言。是一种面向对象的动态类型语言，最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越来越多被用于独立的、大型项目的开发...
+                        </p>
+                        <p class="pbottom">
+                            王老五  2018-5-13  阅读 9999
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="body1_ad">
+            <div class="adtip">
+                <h3>特别推荐</h3>
+                <div class="line">&nbsp;</div>
+            </div>
+            <div class="imglst">
+                <ul>
+                    <li><img src="imgs/pic03.jpg" alt=""></li>
+                    <li><img src="imgs/pic04.jpg" alt=""></li>
+                    <li><img src="imgs/pic02.jpg" alt=""></li>
+                    <li><img src="imgs/pic01.jpg" alt=""></li>
+                    <li><img src="imgs/pic03.jpg" alt=""></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

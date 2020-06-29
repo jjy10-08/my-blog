@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>评论区</title>
+    <link rel="stylesheet" href="css/style1.css">
+    <link rel="shortcut icon" type="image/jpg" href="imgs/logo.jpg">
+    <style>
+        #tit_nav{
+            width: 100%;
+            height: 100px;
+            border: solid 0px red;
+        }
+        #nav{
+            width: 100%;
+            height: 80px;
+            position: fixed;
+            border: solid 0px red;
+            top:0px;
+            left: 45px;
+            background-color:#555;
+            z-index: 9998;
+        }
+        #nav>.box{
+            overflow: hidden;
+            width: 960px;
+            margin: 0 auto;
+            border: solid 0px blue;
+            font-size: 20px;
+        }
+        #nav>.box>.list{
+            float: left;
+            padding: 30px 0px;
+        }
+        #nav>.box>.list>ul{
+            float: left;
+        }
+        #nav>.box>.list>ul>li{
+            float: left;
+            margin-right: 40px;
+        }
+        #nav>.box>#search-form{
+            float: left;
+            padding: 20px 0px;
+        }
+        #nav>.box>#search-form>.search-input-text{
+            width: 130px;
+            height: 25px;
+        }
+        #nav>.box>#search-form>.search-input-button{
+            width: 70px;
+            height: 35px;
+            background-color:#555;
+            border: none;
+            color: #E8F5EC;
+            outline: none;
+        }
+        #nav>.box>#search-form>.search-input-button:hover{
+            cursor: pointer;
+        }
+        .title>img{
+            position: fixed;
+            width: 80px;
+            height:80px;
+            border-radius: 80px;
+            margin-left: 5px;
+            z-index: 9999;
+        }
+        #body3{
+            width: 1200px;
+            margin: 0 auto;
+            border: solid 0px red;
+            overflow: hidden;
+            background-color: white;
+        }
+        /* 设置广告区域的图片大小 */
+        #body3>.ad{
+            width: 260px;
+            margin-top:0px;
+            margin-left: 0px;
+            padding: 20px 20px;
+            background-color: #fff;
+            border: solid 0px blue;
+            float: left;
+        }
+        #body3>.ad>.adtip>.line{
+            border-bottom: solid 2px #000;
+            width: 30px;
+        }
+        #body3>.ad>.imglst>ul>li{
+            margin-top: 20px;
+            width: 260px;
+        }
+        #body3>.ad>.imglst>ul>li>img{
+            width: 100%
+        }
+        /*设置文章格式*/
+        #body3>.list{
+            width: 860px;
+            float: left;
+            border: solid 0px red;
+            margin: 0px 0px 30px 18px;
+        }
+        #body3>.list>.title{
+            margin: 10px 0 20px 0px;
+        }
+        #body3>.list>.line{
+            border-bottom: dashed 1px #cccccc;
+        }
+        #body3>.list>.msg{
+            margin-top: 10px;
+        }
+        /* 评论区样式 */
+        #body3>.comment{
+            width: 860px;
+            float: left;
+            border: solid 0px red;
+            margin: 0px 0px 30px 18px;
+        }
+        #body3>.comment>.com_title{
+            margin: 10px 0 20px 0px;
+        }
+        #body3>.comment>.com_line{
+            border: solid 2px black;
+        }
+        #body3>.comment>.com_box1{
+            width: 860px;
+            border: solid 0px orchid;
+            border-bottom: dashed 1px #cccccc;
+        }
+        #body3>.comment>.com_box1>.com_text{
+            margin: 10px 0 5px 10px;
+        }
+        #body3>.comment>.com_box1>.com_text>textarea{
+            width: 835px;
+            height: 140px;
+            font-size: 16px;
+        }
+        #body3>.comment>.com_box1>.com_btn{
+            height: 42px;
+            margin-left: 760px;
+
+        }
+        #body3>.comment>.com_box1>.com_btn>.com1_btn{
+            width: 70px;
+            height: 30px;
+            background-color: red;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+        }
+        #body3>.comment>.com_box1>.com_btn>.com1_btn:hover{
+            cursor: pointer;
+        }
+        #body3>.comment>.com_box2{
+            width: 860px;
+            border: solid 0px orchid;
+        }
+        #body3>.comment>.com_box2>.com_box2_line{
+            border-bottom: dashed 1px #cccccc;
+        }
+        #body3>.comment>.com_box2>.com_box2_user{
+            width: 840px;
+            margin: 10px 0px 20px 5px;
+            border: solid 0px red;
+            overflow: hidden;
+        }
+        #body3>.comment>.com_box2>.com_box2_user>.com_left{
+            width: 40px;
+            border: solid 0px orange;
+            float: left;
+        }
+        #body3>.comment>.com_box2>.com_box2_user>.com_right{
+            width: 796px;
+            float: left;
+            border: solid 0px darkturquoise;
+        }
+    </style>
+</head>
+<body>
+    <div id="tit_nav">
+        <div class="title">
+            <img src="imgs/logo.jpg" alt="">
+        </div>
+        <div id="nav">
+            <div class="box">
+                <div class="list">
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="personal_information.html">个人信息</a></li>
+                        <li><a href="#">讨论区</a></li>
+                        <li><a href="#">留言</a></li>
+                        <li><a href="#">关于我</a></li>
+                        <li><a href="publish_blog.html">发表博客</a></li>
+                    </ul>
+                </div>
+                <div id="search-form">
+                    <input type="text" class="search-input-text" id="search-input" name="search-input" />
+                    <input type="submit" class="search-input-button" value="搜索"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="body3">
+        <!-- 广告推荐 -->
+        <div class="ad">
+            <div class="adtip">
+                <h3>特别推荐</h3>
+                <div class="line">&nbsp;</div>
+            </div>
+            <div class="imglst">
+                <ul>
+                    <li>
+                        <img src="imgs/pic03.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="imgs/pic04.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="imgs/pic02.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="imgs/pic01.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="imgs/pic03.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="imgs/pic04.jpg" alt="">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 文章内容 -->
+        <div class="list">
+            <div class="title">
+                <h1>&nbsp;</h1>
+            </div>
+<!--            <div class="line"></div>-->
+            <div class="msg">
+                <p>自从20世纪90年代初Python语言诞生至今，它已被逐渐广泛应用于系统管理任务的处理和Web编程。 Python的创始人为荷兰人吉多·范罗苏姆（Guido van Rossum）。1989年圣诞节期间，在阿姆斯特丹，Guido为了打发圣诞节的无趣，决心开发一个新的脚本解释程序，作为ABC 语言的一种继承。
+                    之所以选中Python（大蟒蛇的意思）作为该编程语言的名字，是取自英国20世纪70年代首播的电视喜剧《蒙提.派森的飞行马戏团》（Monty Python's Flying Circus）。ABC是由Guido参加设计的一种教学语言。就Guido本人看来，ABC 这种语言非常优美和强大，是专门为非专业程序员设计的。但是ABC语言并没有成功，究其原因，Guido 认为是其非开放造成的。Guido 决心在Python 中避免这一错误。同时，他还想实现在ABC 中闪现过但未曾实现的东西就这样，Python在Guido手中诞生了。可以说，Python是从ABC发展起来，主要受到了Modula-3（另一种相当优美且强大的语言，为小型团体所设计的）的影响。并且结合了Unix shell和C的习惯。
+                    Python [4]已经成为最受欢迎的程序设计语言之一。自从2004年以后，python的使用率呈线性增长。Python 2于2000年10月16日发布，稳定版本是Python 2.7。Python 3于2008年12月3日发布，不完全兼容Python 2。2011年1月，它被TIOBE编程语言排行榜评为2010年度语言。 [5] 由于Python语言的简洁性、易读性以及可扩展性，在国外用Python做科学计算的研究机构日益增多，一些知名大学已经采用Python来教授程序设计课程。例如卡耐基梅隆大学的编程基础、麻省理工学院的计算机科学及编程导论就使用Python语言讲授。众多开源的科学计算软件包都提供了Python的调用接口，例如著名的计算机视觉库OpenCV、三维可视化库VTK、医学图像处理库ITK。而Python专用的科学计算扩展库就更多了，例如如下3个十分经典的科学计算扩展库：NumPy、SciPy和matplotlib，它们分别为Python提供了快速数组处理、数值运算以及绘图功能。因此Python语言及其众多的扩展库所构成的开发环境十分适合工程技术、科研人员处理实验数据、制作图表，甚至开发科学计算应用程序。2018年3月，该语言作者在邮件列表上宣布Python 2.7将于2020年1月1日终止支持。用户如果想要在这个日期之后继续得到与Python 2.7有关的支持，则需要付费给商业供应商。
+                </p>
+            </div>
+        </div>
+        <!-- 评论区 -->
+        <div class="comment">
+            <div class="com_title">
+                <h2>评论区</h2>
+            </div>
+            <div class="com_line"></div>
+            <div class="com_box1">
+                <div class="com_text">
+                    <textarea name="com" id="com" cols="30" rows="10" placeholder='有什么话对作者说'></textarea>
+                </div>
+                <div class="com_btn">
+                    <input type="submit" value="发表评论" class="com1_btn">
+                </div>
+            </div>
+            <div class="com_box2">
+                <div class="com_box2_user">
+                    <div class="com_left">
+                        <p style="font-size: 15px;font-weight: 700">韩龙:</p>
+                    </div>
+                    <div class="com_right">
+                        <p style="font-size: 15px">Python的作者有意的设计限制性很强的语法，使得不好的编程习惯（例如if语句的下一行不向右缩进）都不能通过编译。其中很重要的一项就是Python的缩进规则。
+                        </p>
+                    </div>
+                </div>
+                <div class="com_box2_line">
+
+                </div>
+            </div>
+            <div class="com_box2">
+                <div class="com_box2_user">
+                    <div class="com_left">
+                        <p style="font-size: 15px;font-weight: 700">韩龙:</p>
+                    </div>
+                    <div class="com_right">
+                        <p style="font-size: 15px">Python的作者有意的设计限制性很强的语法，使得不好的编程习惯（例如if语句的下一行不向右缩进）都不能通过编译。其中很重要的一项就是Python的缩进规则。
+                        </p>
+                    </div>
+                </div>
+                <div class="com_box2_line">
+
+                </div>
+            </div>
+            <div class="com_box2">
+                <div class="com_box2_user">
+                    <div class="com_left">
+                        <p style="font-size: 15px;font-weight: 700">韩龙:</p>
+                    </div>
+                    <div class="com_right">
+                        <p style="font-size: 15px">Python的作者有意的设计限制性很强的语法，使得不好的编程习惯（例如if语句的下一行不向右缩进）都不能通过编译。其中很重要的一项就是Python的缩进规则。
+                        </p>
+                    </div>
+                </div>
+                <div class="com_box2_line">
+
+                </div>
+            </div>
+            <div class="com_box2">
+                <div class="com_box2_user">
+                    <div class="com_left">
+                        <p style="font-size: 15px;font-weight: 700">韩龙:</p>
+                    </div>
+                    <div class="com_right">
+                        <p style="font-size: 15px">Python的作者有意的设计限制性很强的语法，使得不好的编程习惯（例如if语句的下一行不向右缩进）都不能通过编译。其中很重要的一项就是Python的缩进规则。
+                        </p>
+                    </div>
+                </div>
+                <div class="com_box2_line">
+
+                </div>
+            </div>
+            <div class="com_box2">
+                <div class="com_box2_user">
+                    <div class="com_left">
+                        <p style="font-size: 15px;font-weight: 700">韩龙:</p>
+                    </div>
+                    <div class="com_right">
+                        <p style="font-size: 15px">Python的作者有意的设计限制性很强的语法，使得不好的编程习惯（例如if语句的下一行不向右缩进）都不能通过编译。其中很重要的一项就是Python的缩进规则。
+                        </p>
+                    </div>
+                </div>
+                <div class="com_box2_line">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

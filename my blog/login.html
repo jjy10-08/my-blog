@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="shortcut icon" type="image/jpg" href="imgs/logo.jpg">
+    <!-- 使用link元素导入样式文件 -->
+    <link rel="stylesheet" href="css/style1.css">
+    <!-- 导入jq框架用于代码的开发（压缩版） -->
+    <script src="js/jquery.min.js"></script>
+    <!-- 导入页面业务逻辑代码 必须首先导入jq框架-->
+    <script src="js/blog1.js"></script>
+    <style>
+        #login>img{
+            width: 100%;
+            position: fixed;
+            opacity:0.5 ;  /*设置元素的透明度*/
+            }
+
+        /* log框的样式 */
+        #log{
+            position: absolute;
+            width: 410px;
+            height: 375px;
+            border: solid 0px red;
+            left:50%;
+            top:20%;/*视觉向上处于最佳位置*/
+            margin-left: -205px;
+            z-index: 9999;
+            background-color:#fff;
+            border-radius: 10px;
+            box-shadow: 3px 3px 5px #666;
+        }
+        #log>.title{
+            text-align: center;
+            padding: 30px 0 40px 0;
+            border-bottom: solid 1px #ccc;
+        }
+        #log>.title>h3{
+            font-size: 30px;
+        }
+        #log>.tip {
+            margin: 32px 0px 10px 28px
+        }
+        #log>.item{
+            margin-top:8px;
+        }
+        #log>.item>input {
+            width: 280px;
+            margin-left: 28px;
+            margin-bottom: 5px;
+            margin-top: 5px;
+            padding: 10px;
+            border-radius: 3px;
+            outline: none; /*除掉选中线*/
+            border: solid 1px #ccc;/*设置边框线*/
+        }
+        #log>.btn1{
+            margin-top: 28px;
+            margin-left: 75px;
+        }
+        #log>.btn2{
+            margin-left: 220px;
+            margin-top: -40px;
+        }
+        #log>.btn1>a>.btn1_l{
+            width: 80px;
+            height: 40px;
+        }
+        #log>.btn2>a>.btn2_r{
+            width: 80px;
+            height: 40px;
+        }
+        #log>.btn1>a>.btn1_l:hover{
+            cursor: pointer;
+        }
+        #log>.btn2>a>.btn2_r:hover{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="login">
+        <img src="imgs/login1.jpg" alt="">
+    </div>
+    <div id="log">
+        <div class="title">
+            <h3>欢迎来到T-hub</h3>
+        </div>
+        <div class="tip">
+            <h4>登录账号</h4>
+        </div>
+        <div class="item">
+            <input type="text" name="username" id="username" placeholder="用户名">
+        </div>
+        <div class="item">
+            <input type="text" name="password" id="password" placeholder="密码">
+        </div>
+        <div class="btn1">
+            <a href="main_page.html"><input type="submit" value="登录" class="btn1_l"></a>
+        </div>
+        <div class="btn2">
+            <a href="register.html"><input type="submit" value="注册" class="btn2_r"></a>
+        </div>
+    </div>
+
+</body>
+</html>

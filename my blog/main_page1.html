@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+    <link rel="shortcut icon" type="image/jpg" href="imgs/logo.jpg">
+    <!-- 导入样式文件 -->
+    <link rel="stylesheet" href="css/style1.css">
+    <!-- 导入jq框架文件 -->
+    <script src="js/jquery.min.js"></script>
+    <style>
+        #tit_nav{
+            width: 100%;
+            height: 100px;
+            border: solid 0px red;
+        }
+        #nav{
+            width: 100%;
+            height: 80px;
+            position: fixed;
+            border: solid 0px red;
+            top:0px;
+            left: 45px;
+            background-color:#555;
+            z-index: 9998;
+        }
+        #nav>.box{
+            overflow: hidden;
+            width: 960px;
+            margin: 0 auto;
+            border: solid 0px blue;
+            font-size: 20px;
+        }
+        #nav>.box>.list{
+            float: left;
+            padding: 30px 0px;
+        }
+        #nav>.box>.list>ul{
+            float: left;
+        }
+        #nav>.box>.list>ul>li{
+            float: left;
+            margin-right: 40px;
+        }
+        #nav>.box>#search-form{
+            float: left;
+            padding: 20px 0px;
+        }
+        #nav>.box>#search-form>.search-input-text{
+            width: 130px;
+            height: 25px;
+        }
+        #nav>.box>#search-form>.search-input-button{
+            width: 70px;
+            height: 35px;
+            background-color:#555;
+            border: none;
+            color: #E8F5EC;
+            outline: none;
+        }
+        #nav>.box>#search-form>.search-input-button:hover{
+            cursor: pointer;
+        }
+        .title>img{
+            position: fixed;
+            width: 80px;
+            height:80px;
+            border-radius: 80px;
+            margin-left: 5px;
+            z-index: 9999;
+        }
+        /*<!--左边导航栏样式-->*/
+        #nav2{
+            width: 120px;
+            height: 400px;
+            margin: 96px 150px;
+            border: solid 0px red;
+            background-color: white;
+            position: fixed;
+        }
+        #nav2>.nav2_list>ul{
+            width: 120px;
+            height: 400px;
+            padding-top: 10px;
+        }
+        #nav2>.nav2_list>ul>li{
+            height: 60px;
+            text-align: center;
+        }
+        #nav2>.nav2_list>ul>li>a{
+            color: black;
+            font-size: 20px;
+        }
+        /*中心内容*/
+        #body{
+            width: 960px;
+            border: solid 0px red;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        #body>.pic{
+            width: 595px;
+            margin: 15px 15px 15px 15px;
+            border: solid 0px blue;
+            position: relative;
+            float: left;
+        }
+        #body>.pic>.pic1>img{
+            width: 100%;
+            height: 400px;
+        }
+        #body>.pic>.lleft{
+           top:48%;
+           left:0;
+           position: absolute;
+           cursor:pointer;
+           opacity:0.5;
+        }
+        #body>.pic>.rright{
+           top:48%;
+           right: 0;
+           position: absolute;
+           cursor:pointer;
+           opacity:0.5
+        }
+        /*文章部分样式*/
+        #body>.list{
+            margin: 5px 0px 15px 15px;
+            width: 595px;
+            border: solid 0px blue;
+            background-color: white;
+            float: left;
+        }
+        #body>.list>.list1{
+            margin: 15px 0px 5px 10px;
+            width: 580px;
+            height: 110px;
+            border: solid 0px red;
+            background-color: white;
+            float: left;
+        }
+        #body>.list>.list1>.item>.con>.cleft{
+            width: 210px;
+            float: left;
+            margin-top: 0px ;
+        }
+        #body>.list>.list1>.item>.con>.cright{
+            width: 350px;
+            float: left;
+            padding: 0px 0px 0px 15px;
+            margin-top: 0px;
+        }
+        #body>.list>.list1>.item>.con>.cright>.pbottom{
+            margin-top:26px;
+            font-size: 11px;
+        }
+        #body>.list>.list1>.item>.con>.cleft>img{
+            width: 100%;
+        }
+        /*广告区域样式*/
+        #body>.ad{
+            width: 260px;
+            border: solid 0px red;
+            float: left;
+            margin-top: -423px;
+            margin-left: 15px;
+            padding: 20px 20px;
+            background-color: white;
+        }
+        #body>.ad>.adtip>.line{
+            border-bottom: solid 2px #000;
+            width: 30px;
+        }
+        #body>.ad>.imglst>ul>li{
+            margin-top: 20px;
+            width: 260px;
+        }
+        #body>.ad>.imglst>ul>li>img{
+            width: 100%
+        }
+    </style>
+</head>
+<body>
+    <div id="tit_nav">
+        <div class="title">
+            <img src="static/imgs/logo.jpg" alt="">
+        </div>
+        <div id="nav">
+            <div class="box">
+                <div class="list">
+                    <ul>
+                        <li><a href="#">首页</a></li>
+                        <li><a href="personal_information.html">个人信息</a></li>
+                        <li><a href="#">讨论区</a></li>
+                        <li><a href="#">留言</a></li>
+                        <li><a href="#">关于我</a></li>
+                        <li><a href="publish_blog.html">发表博客</a></li>
+                    </ul>
+                </div>
+                <div id="search-form">
+                    <input type="text" class="search-input-text" id="search-input" name="search-input" />
+                    <input type="submit" class="search-input-button" value="搜索"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="nav2">
+        <div class="nav2_list">
+            <ul>
+                <li><a href="">推荐</a></li>
+                <li><a href="">Python</a></li>
+                <li><a href="">Java</a></li>
+                <li><a href="">前端Web</a></li>
+                <li><a href="">计算机基础</a></li>
+                <li><a href="">数据库</a></li>
+                <li><a href="">其他</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="body">
+        <div class="pic">
+            <div class="pic1">
+                <img id="img" src="static/imgs/pic01.jpg" alt="">
+            </div>
+            <div class="lleft">
+                <img src="static/imgs/l1.png" alt="">
+            </div>
+            <div class="rright">
+                <img src="static/imgs/r1.png" alt="">
+            </div>
+        </div>
+        <div class="list">
+            <div class="list1" id="essay1">
+                <div class="item">
+                <!-- 内容 -->
+                <div class="con">
+                    <!-- 左侧图片 -->
+                    <div class="cleft">
+                        <img src="static/imgs/pic05.jpg" alt="">
+                    </div>
+                    <!-- 右侧图片说明 -->
+                    <div class="cright">
+                        <div class="hide" id="art_id1">1</div>
+                        <p class="ptop" id="content1">
+                            Python是一种跨平台的计算机程序设计语言。是一种面向对象的动态类型语言，最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越来越多被用于独立的、大型项目的开发...
+                        </p>
+                        <p class="pbottom" id="info1">
+                            王老五  2018-5-13  阅读 9999
+                        </p>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="list1" id="essay2">
+                <div class="item">
+                <!-- 内容 -->
+                <div class="con">
+                    <!-- 左侧图片 -->
+                    <div class="cleft">
+                        <img src="static/imgs/pic05.jpg" alt="">
+                    </div>
+                    <!-- 右侧图片说明 -->
+                    <div class="cright">
+                        <div class="hide" id="art_id2"></div>
+                        <p class="ptop" id="content2">
+                            Python是一种跨平台的计算机程序设计语言。是一种面向对象的动态类型语言，最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越来越多被用于独立的、大型项目的开发...
+                        </p>
+                        <p class="pbottom" id="info2">
+                            王老五  2018-5-13  阅读 9999
+                        </p>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="list1" id="essay3">
+                <div class="item">
+                <!-- 内容 -->
+                <div class="con">
+                    <!-- 左侧图片 -->
+                    <div class="cleft">
+                        <img src="static/imgs/pic05.jpg" alt="">
+                    </div>
+                    <!-- 右侧图片说明 -->
+                    <div class="cright">
+                        <div class="hide" id="art_id3"></div>
+                        <p class="ptop" id="content3">
+                            Python是一种跨平台的计算机程序设计语言。是一种面向对象的动态类型语言，最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越来越多被用于独立的、大型项目的开发...
+                        </p>
+                        <p class="pbottom" id="info3">
+                            王老五  2018-5-13  阅读 9999
+                        </p>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="list1" id="essay4">
+                <div class="item">
+                <!-- 内容 -->
+                <div class="con">
+                    <!-- 左侧图片 -->
+                    <div class="cleft">
+                        <img src="static/imgs/pic05.jpg" alt="">
+                    </div>
+                    <!-- 右侧图片说明 -->
+                    <div class="cright">
+                        <div class="hide" id="art_id4"></div>
+                        <p class="ptop" id="content4">
+                            Python是一种跨平台的计算机程序设计语言。是一种面向对象的动态类型语言，最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越来越多被用于独立的、大型项目的开发...
+                        </p>
+                        <p class="pbottom" id="info4">
+                            王老五  2018-5-13  阅读 9999
+                        </p>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="list1" id="essay5">
+                <div class="item">
+                <!-- 内容 -->
+                <div class="con">
+                    <!-- 左侧图片 -->
+                    <div class="cleft">
+                        <img src="static/imgs/pic05.jpg" alt="">
+                    </div>
+                    <!-- 右侧图片说明 -->
+                    <div class="cright">
+                        <div class="hide" id="art_id5"></div>
+                        <p class="ptop" id="content5">
+                            Python是一种跨平台的计算机程序设计语言。是一种面向对象的动态类型语言，最初被设计用于编写自动化脚本(shell)，随着版本的不断更新和语言新功能的添加，越来越多被用于独立的、大型项目的开发...
+                        </p>
+                        <p class="pbottom" id="info5">
+                            王老五  2018-5-13  阅读 9999
+                        </p>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="ad">
+            <div class="adtip">
+                <h3>特别推荐</h3>
+                <div class="line">&nbsp;</div>
+            </div>
+            <div class="imglst">
+                <ul>
+                    <li>
+                        <img src="static/imgs/pic03.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="static/imgs/pic04.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="static/imgs/pic02.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="static/imgs/pic01.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="static/imgs/pic03.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="static/imgs/pic04.jpg" alt="">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="js/blog1.js"></script>
+</body>
+</html>

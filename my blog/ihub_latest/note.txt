@@ -1,0 +1,29 @@
+1.分析需求
+2.编写代码
+3.编写单元测试
+4.自测
+5.编写接口文档 -- 前端访问的方式
+6.提交测试代码
+
+
+1.发送短信服务
+www.yuntongxun.com
+
+2.redis 文档
+http://redis-py.readthedocs.io/en/latest/#indices-and-tables python中的函数
+http://redisdoc.com/index.html  命令
+
+3. 图片服务
+    保存到程序本地存在扩容问题
+    数据不安全 ，  备份的问题
+    多级存储
+    用户A --名字A 用户B--名字B 同一张图 保存两次浪费空间
+    同名不同图 覆盖问题
+ 解决方案: 文件存储
+ 1.搭建文件存储系 fastDFS 快速分布式文件存储系统 HDFS　Hadoop分布式文件系统
+ 2.第三方服务  七牛云存储(按访问量收费)  阿里云 www.qiniu.com
+
+
+# 注册逻辑改变! 取消取证码 不用手机号 换成账号!
+
+

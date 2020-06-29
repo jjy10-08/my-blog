@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<link rel="shortcut icon" type="image/jpg" href="imgs/logo.jpg">
+    <!-- 使用link元素导入样式文件 -->
+    <link rel="stylesheet" href="css/style1.css">
+    <!-- 导入jq框架用于代码的开发（压缩版） -->
+    <script src="js/jquery.min.js"></script>
+    <!-- 导入页面业务逻辑代码 必须首先导入jq框架-->
+    <script src="js/blog1.js"></script>
+    <style>
+        #register>img{
+            width: 100%;
+            position: fixed;
+            opacity:0.5 ;  /*设置元素的透明度*/
+            }
+        #log_reg{
+            position: absolute;
+            width: 410px;
+            height: 375px;
+            border: solid 0px red;
+            left:50%;
+            top:20%;/*视觉向上处于最佳位置*/
+            margin-left: -205px;
+            z-index: 9999;
+            background-color:#fff;
+            border-radius: 10px;
+            box-shadow: 3px 3px 5px #666;
+        }
+        #log_reg>.title{
+            text-align: center;
+            padding: 30px 0 30px 0;
+            border-bottom: solid 1px #ccc;
+        }
+        #log_reg>.title>h3{
+            font-size: 30px;
+        }
+        #log_reg>.tip {
+            margin: 20px 0px 10px 28px
+        }
+        #log_reg>.item{
+            margin-top:8px;
+        }
+        #log_reg>.item>input {
+            width: 280px;
+            margin: 5px 0 5px 28px;
+            padding: 8px;
+            border-radius: 3px;
+            outline: none; /*除掉选中线*/
+            border: solid 1px #ccc;/*设置边框线*/
+        }
+        #log_reg>.btn1{
+            margin-top: 20px;
+            margin-left: 140px;
+        }
+        #log_reg>.btn1>a>.btn1_r:hover{
+            cursor: pointer;
+        }
+        #log_reg>.btn1>a>.btn1_r{
+            width: 100px;
+            height: 40px;
+        }
+    </style>
+<body>
+    <div id="register">
+        <img src="imgs/pic01.jpg" alt="">
+    </div>
+    <div id="log_reg">
+        <div class="title">
+            <h3>欢迎注册T-hub</h3>
+        </div>
+        <div class="tip">
+            <h4>注册账号</h4>
+        </div>
+        <div class="item">
+            <input type="text" name="username" id="username" placeholder="用户名">
+        </div>
+        <div class="item">
+            <input type="text" name="password" id="password" placeholder="密码">
+        </div>
+        <div class="item">
+            <input type="text" name="password1" id="password1" placeholder="确认密码">
+        </div>
+        <div class="btn1">
+            <a style="color: black" href="main_page.html"><input type="submit" value="立即注册" class="btn1_r"></a>
+        </div>
+    </div>
+</body>
+</html>

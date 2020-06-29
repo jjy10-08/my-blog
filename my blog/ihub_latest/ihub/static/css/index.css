@@ -1,0 +1,15 @@
+
+    div.header{
+        width:1832;
+        height:72;
+        color:rgba(255,255,255,0.7);
+        font-size:16px;
+        background-color:#24292E;
+    }
+    div.header_menu{
+        width:1280;
+        height:56;
+        margin:0px,16px;
+
+    }
+

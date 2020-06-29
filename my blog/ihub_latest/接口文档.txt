@@ -1,0 +1,74 @@
+接口文档
+
+1.接口名字 提供图片验证码
+2.描述（描述接口的功能）:
+3.传入参数：
+4.返回参数：
+
+
+接口:get_image_code 获取图片验证码
+描述: 前端访问,可以获取到验证码图片
+url: /api/v1.0/image_codes/<image_code_id>
+请求方式: GET
+传入参数:
+    格式: 路径参数(参数是查询字符串/请求体的表单/json/xml)
+    名字              类型        是否必须     说明
+    image_code_id   字符串          是          验证码图片的编号
+返回值:
+    格式: 正常：图片，异常：json
+    名字    类型     是否必传         说明
+    errno   字符串      否           错误代码
+    errmsg  字符串      否           错误内容
+
+    实例:
+    '{"errno":"4001","errmsg":"保存图片验证码失败"}'
+
+
+
+
+前后端信息判断接口见: ihub.utils.response_code.py
+参数传递:可以正则提取见api_1_0.demo.py
+参数提取 同见api_1_0.demo.py
+
+数据库表在ihub.models中 如果需要新的字段  务必告知
+数据库操作 可以导入自己需要的模块生成相应的对象/或者直接对类进行操作 进行操作
+sqlalcamy.txt 提供了一些基本的操作方法
+
+示例: 以下为 查询和 修改 用户模块提供了查询的字典 . 如果需要别的函数封装 请告知
+
+    try:
+        User.query.filter_by(id=user_id).update({"avatar_url": constants.QINIU_URL_PREFIX + file_name})
+        db.session.commit()
+    except Exception as e:
+        db.session.rollback()
+
+
+url格式:在函数上方注释好自己的url
+    chat模块: /api/v1.0/chat/xxxx
+    search模块:/api/v1.0/search/xxx
+    download模块: /api/v1.0/downloa/xxx
+
+
+需要验证是否登录的: 步骤
+1 导入. from ihub.utils.commons import login_required
+2.添加装饰器 @login_required
+3.在登录状态下 提供了 全局变量g.id  (用户的主键) 进行查询用户表中的相应信息
+# # 加载信息接口
+# @api.route("/user", methods=["GET"])
+# @login_required
+# def show_profile():
+#     '''获取个人信息
+#     :return:
+#     '''
+#     # g.user_id
+#     # 查询数据库获取个人信息
+#     pass
+
+
+
+常量的定义在ihub.constants.py中
+静态文件 html js html 统一在static中
+
+全局使用定义的通用函数在 ihub.utils.commons.py中
+
+统一通过manager.py 开启服务端
